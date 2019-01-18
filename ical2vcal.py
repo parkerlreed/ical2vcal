@@ -10,4 +10,4 @@ import vcal
 
 calendar = vcal.parse(sys.argv[1])
 
-print cal.as_vcal()
+print calendar.as_vcal()

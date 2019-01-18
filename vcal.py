@@ -296,7 +296,7 @@ class Event:
                                         sgn = '+'
                                     fmod = fmod + ('%s%s %s' % (ith, sgn, day)).strip()
                                 else:
-                                    print(b)
+                                    print b
                                                                         
                 if freqtype == '':
                     # pick default for yearly
@@ -353,7 +353,7 @@ class Event:
 
         Non-string keys are ignored.'''
 
-        for key, value in list(kw.items()):
+        for key, value in kw.items():
             self.loadprop(key, value)
 
     def loadprop(self, name, value):
@@ -612,7 +612,7 @@ def duration2seconds(dtstart, d):
         if m.group(i): components[keys[i]] = int(m.group(i)[:-1])
 
     seconds = 0
-    for k, v in list(components.items()):
+    for k, v in components.items():
         if k == 'Y': seconds += v * SECONDS_PER_YEAR
         elif k == 'M':
 
@@ -669,14 +669,14 @@ def parse(vcalsource):
 
     if stream is None:
         try:
-            import urllib.request, urllib.parse, urllib.error
-            stream = urllib.request.urlopen(vcalsource)
+            import urllib
+            stream = urllib.urlopen(vcalsource)
         except (IOError, OSError): 
             pass
 
     if stream is None:
-        import io
-        stream = io.StringIO(str(vcalsource))
+        import StringIO
+        stream = StringIO.StringIO(str(vcalsource))
 
     parsedchars = 0
 

@@ -1,6 +1,8 @@
 # ical2vcal
 Python script to convert ical to vcal format. Requires python2 (please somebody rewrite for 3. I'm too lazy and 2to3 doesn't work straight on it)
 
+Original cgi script https://web.archive.org/web/20091231023913/http://code.google.com:80/p/ical2vcal/source/browse/trunk/ical2vcal.cgi
+
 ````
 [parker@stealth ~]$ python2 ical2vcal.py Downloads/sample.ics 
 BEGIN:VCALENDAR
